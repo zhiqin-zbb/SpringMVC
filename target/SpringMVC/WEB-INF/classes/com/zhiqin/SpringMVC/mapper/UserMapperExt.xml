@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqin.SpringMVC.dao.impl.UserMapperExt">
+	<select id="getUserById" parameterType="java.lang.Integer"
+		resultMap="com.zhiqin.SpringMVC.dao.impl.UserMapper.BaseResultMap">
+		select *
+		from tb_user
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="getPasswordByUsername" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		select password from tb_user where username=#{username,
+		jdbcType=VARCHAR}
+	</select>
+</mapper>
