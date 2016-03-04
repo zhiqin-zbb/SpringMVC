@@ -12,4 +12,9 @@
 		select password from tb_user where username=#{username,
 		jdbcType=VARCHAR}
 	</select>
+	<select id="getUserByUsername" parameterType="java.lang.String"
+		resultMap="com.zhiqin.SpringMVC.dao.impl.UserMapper.BaseResultMap">
+		select * from tb_user where username=#{username,
+		jdbcType=VARCHAR}
+	</select>
 </mapper>

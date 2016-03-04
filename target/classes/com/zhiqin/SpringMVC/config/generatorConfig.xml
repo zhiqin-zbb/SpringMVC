@@ -12,8 +12,8 @@
 		<property name="useActualColumnNames" value="false" />
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/db_bookshop" userId="root"
-			password="zhang">
+			connectionURL="jdbc:mysql://121.42.189.130:3306/db_bookshop" userId="root"
+			password="nanjing$19910705">
 		</jdbcConnection>
 
 		<javaTypeResolver>

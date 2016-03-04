@@ -18,10 +18,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean loginVerify(String username, String password) {
+	public String loginVerify(String username, String password) {
 		if (userMapperExt.getPasswordByUsername(username).equals(password))
-			return true;
+			return "success";
 		else
-			return false;
+			return "fail";
+	}
+
+	@Override
+	public User getUserByUsername(String username) {
+		return userMapperExt.getUserByUsername(username);
 	}
 }
