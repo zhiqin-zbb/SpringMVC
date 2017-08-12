@@ -3,6 +3,8 @@ package com.zhiqin.SpringMVC.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,7 @@ import com.zhiqin.SpringMVC.service.UserService;
 @Controller
 @RequestMapping("/")
 public class UserController {
+    private final Log LOGGER = LogFactory.getLog(UserController.class);
     @Autowired
     UserService userService;
 
@@ -55,6 +58,7 @@ public class UserController {
     public @ResponseBody
     Map verify(@RequestParam("username") String username,
                @RequestParam("password") String password) {
+        LOGGER.info("用户登录");
         Map<String, String> map = new HashMap<>();
         map.put("result", userService.loginVerify(username, password));
         return map;
